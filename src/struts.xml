@@ -7,16 +7,10 @@
 
 
 	<package name="default" namespace="/" extends="struts-default">
-		
-		<action name="register" class="com.qingshixun.register.RegisterAction"
-			method="register">
-			<result type="dispatcher">/WEB-INF/views/register.jsp</result>
+		<action name="*User" class="com.qingshixun.register.RegisterAction"
+			method="{1}">
+			<result name="success">/WEB-INF/views/{1}.jsp</result>
 		</action>
-		
-		<action name="regist" class="com.qingshixun.register.RegisterAction"
-			method="regist">
-			<result>/WEB-INF/views/success.jsp</result>
-		</action>
-		
+
 	</package>
 </struts>
