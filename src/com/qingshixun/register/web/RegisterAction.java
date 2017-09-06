@@ -16,6 +16,10 @@ public class RegisterAction extends ActionSupport implements ModelDriven<User> {
 
 	// 跳转到成功页面
 	public String success() {
+		String username = userService.getUsername(user.getUsername());
+		if(username != null){
+			return "usernameExitError";
+		}
 		userService.insertUser(user);
 		return SUCCESS;
 	}

@@ -7,10 +7,13 @@
 
 
 	<package name="default" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="usernameExitError" type="dispatcher">/WEB-INF/views/regist.jsp?error=-1
+			</result>
+		</global-results>
 		<action name="*User" class="com.qingshixun.register.web.RegisterAction"
 			method="{1}">
 			<result name="success">/WEB-INF/views/{1}.jsp</result>
 		</action>
-
 	</package>
 </struts>
