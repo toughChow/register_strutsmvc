@@ -7,7 +7,7 @@
 
 
 	<package name="default" namespace="/" extends="struts-default">
-		<action name="*User" class="com.qingshixun.register.RegisterAction"
+		<action name="*User" class="com.qingshixun.register.web.RegisterAction"
 			method="{1}">
 			<result name="success">/WEB-INF/views/{1}.jsp</result>
 		</action>
