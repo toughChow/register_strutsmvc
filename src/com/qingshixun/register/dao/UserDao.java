@@ -47,7 +47,6 @@ public class UserDao extends BaseDao {
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				usernameTemp = resultSet.getString("username");
-				System.out.println(usernameTemp);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

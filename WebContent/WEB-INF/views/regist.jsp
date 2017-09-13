@@ -8,6 +8,7 @@
 <title>轻实训-注册</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link href="images/monkey.ico" rel="shortcut icon">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
 </head>
 <body style="background-image: url(images/bg.jpg);">
@@ -21,6 +22,7 @@
 				<div>
 					用户名称: <input type="text" name="username" id="username"
 						required="required" min="6" max="20">
+						<b id="usernameMsg"></b>
 				</div>
 				<div>
 					登录密码: <input type="password" name="password" id="passwordone"
@@ -60,11 +62,27 @@
 				</div>
 				<hr>
 				<input type="submit" name="" value="注册" class="button"
-					onclick="return validateMessage()"> <input type="reset"
-					name="" value="重置" class="button">
+					onclick="return validateMessage()">
+				<input type="reset" name="" value="重置" class="button">
 			</s:form>
 		</article>
 		<footer> Copyright&copy;2017_jstough版权所有 </footer>
 	</div>
+	<script type="text/javascript">
+		$(function() {
+			$('#username').blur(function() {
+				var username = $('#username').val();
+				$.post("validateMsg", {
+					"username" : username
+				}, function(data) {
+					if (data == "1") {
+						$('#usernameMsg').html("该用户名可以使用").css({color:"green"});
+					} else {
+						$('#usernameMsg').html("该用户名已被占用").css({color:"red"});
+					}
+				}, "json");
+			});
+		});
+	</script>
 </body>
 </html>

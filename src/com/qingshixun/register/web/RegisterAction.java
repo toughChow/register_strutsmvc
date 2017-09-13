@@ -36,5 +36,5 @@ public class RegisterAction extends ActionSupport implements ModelDriven<User> {
 	public User getModel() {
 		return user;
 	}
-
+	
 }

@@ -48,6 +48,6 @@ function validateMessage() {
 		alert("用户名和密码不能相同!");
 		return false;
 	} else {
-		alert("登录成功!");
+		alert("注册成功!");
 	}
 }

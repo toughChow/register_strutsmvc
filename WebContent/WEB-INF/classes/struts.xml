@@ -4,8 +4,15 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-
-
+	<package name="default2" extends="json-default">
+		<action name="validateMsg" class="com.qingshixun.register.web.ValidateAction"
+			method="validateUsername">
+			<result name="success" type="json">
+				<param name="root">username</param>
+			</result>
+		</action>
+	</package>
+	
 	<package name="default" namespace="/" extends="struts-default">
 		<global-results>
 			<result name="usernameExitError" type="dispatcher">/WEB-INF/views/regist.jsp?error=-1
@@ -16,4 +23,6 @@
 			<result name="success">/WEB-INF/views/{1}.jsp</result>
 		</action>
 	</package>
+
+
 </struts>
