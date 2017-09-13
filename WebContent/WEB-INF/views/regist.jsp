@@ -79,6 +79,7 @@
 						$('#usernameMsg').html("该用户名可以使用").css({color:"green"});
 					} else {
 						$('#usernameMsg').html("该用户名已被占用").css({color:"red"});
+						$('#username').val('');
 					}
 				}, "json");
 			});

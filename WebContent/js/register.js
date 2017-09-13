@@ -7,6 +7,7 @@ function validateMessage() {
 	var passwordoneLength = passwordoneValue.length;
 	var passwordtwoLength = passwordtwoValue.length;
 	var usernameTrim = usernameValue.trim();
+	var judgeUser = document.getElementsById("judgeUser").value;
 	// 验证用户名密码是否为空
 	if (usernameTrim == '') {
 		alert("用户名不能为空!");
